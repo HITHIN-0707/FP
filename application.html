@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Car Loan Application - SBI</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+    }
+    header {
+      background-color: #0078d4;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    h1 {
+      font-size: 2em;
+    }
+    .form-container {
+      max-width: 900px;
+      margin: 30px auto;
+      background-color: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    .form-section {
+      display: none;
+      margin-bottom: 20px;
+    }
+    .form-section.active {
+      display: block;
+    }
+    .form-section h2 {
+      color: #0078d4;
+      font-size: 1.6em;
+    }
+    input[type="text"], input[type="number"], input[type="email"], input[type="date"], select {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 4px;
+      border: 1px solid #ddd;
+    }
+    .btn {
+      background-color: #0078d4;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+    .btn:hover {
+      background-color: #0056a3;
+    }
+    footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      margin-top: 40px;
+    }
+    .summary {
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>SBI Car Loan Application</h1>
+  </header>
+
+  <div class="form-container">
+    <!-- Step 1: Personal Details -->
+    <div class="form-section active" id="step1">
+      <h2>Step 1: Personal Details</h2>
+      <label for="fullName">Full Name:</label>
+      <input type="text" id="fullName" name="fullName" placeholder="Enter your full name" required>
+
+      <label for="dob">Date of Birth:</label>
+      <input type="date" id="dob" name="dob" required>
+
+      <label for="address">Address:</label>
+      <input type="text" id="address" name="address" placeholder="Enter your address" required>
+
+      <label for="contact">Contact Number:</label>
+      <input type="text" id="contact" name="contact" placeholder="Enter your contact number" required>
+
+      <label for="email">Email Address:</label>
+      <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+
+      <button type="button" class="btn" onclick="nextStep(2)">Next Step</button>
+    </div>
+
+    <!-- Step 2: Loan Details -->
+    <div class="form-section" id="step2">
+      <h2>Step 2: Loan Details</h2>
+      <label for="loanAmount">Loan Amount (₹):</label>
+      <input type="number" id="loanAmount" name="loanAmount" placeholder="Enter loan amount" required>
+
+      <label for="loanTenure">Loan Tenure (in years):</label>
+      <input type="number" id="loanTenure" name="loanTenure" placeholder="Enter loan tenure (in years)" required>
+
+      <label for="loanType">Select Loan Type:</label>
+      <select id="loanType" name="loanType" required>
+        <option value="newCar">New Car Loan</option>
+        <option value="usedCar">Used Car Loan</option>
+      </select>
+
+      <label for="downPayment">Down Payment (₹):</label>
+      <input type="number" id="downPayment" name="downPayment" placeholder="Enter down payment amount" required>
+
+      <button type="button" class="btn" onclick="nextStep(3)">Next Step</button>
+    </div>
+
+    <!-- Step 3: Employment and Income Details -->
+    <div class="form-section" id="step3">
+      <h2>Step 3: Employment and Income Details</h2>
+      <label for="employmentStatus">Employment Status:</label>
+      <select id="employmentStatus" name="employmentStatus" required>
+        <option value="salaried">Salaried</option>
+        <option value="selfEmployed">Self-Employed</option>
+        <option value="pensioner">Pensioner</option>
+      </select>
+
+      <label for="income">Annual Income (₹):</label>
+      <input type="number" id="income" name="income" placeholder="Enter your annual income" required>
+
+      <label for="companyName">Company Name (if salaried/self-employed):</label>
+      <input type="text" id="companyName" name="companyName" placeholder="Enter your company name">
+
+      <button type="button" class="btn" onclick="nextStep(4)">Next Step</button>
+    </div>
+
+    <!-- Step 4: Document Details -->
+    <div class="form-section" id="step4">
+      <h2>Step 4: Documents Required</h2>
+      <label for="identityProof">Identity Proof (Aadhar/Passport):</label>
+      <input type="text" id="identityProof" name="identityProof" placeholder="Enter identity proof details" required>
+
+      <label for="addressProof">Address Proof (Utility Bill/Bank Statement):</label>
+      <input type="text" id="addressProof" name="addressProof" placeholder="Enter address proof details" required>
+
+      <label for="incomeProof">Income Proof (Salary Slip/Bank Statement):</label>
+      <input type="text" id="incomeProof" name="incomeProof" placeholder="Enter income proof details" required>
+
+      <label for="carDetails">Car Details (Invoice/Quotation):</label>
+      <input type="text" id="carDetails" name="carDetails" placeholder="Enter car details" required>
+
+      <label for="photo">Photograph:</label>
+      <input type="text" id="photo" name="photo" placeholder="Enter photograph details" required>
+
+      <button type="button" class="btn" onclick="nextStep(5)">Next Step</button>
+    </div>
+
+    <!-- Step 5: Final Confirmation -->
+    <div class="form-section" id="step5">
+      <h2>Step 5: Final Confirmation</h2>
+      <div class="summary">
+        <h3>Summary of Details Entered:</h3>
+        <ul id="summaryList"></ul>
+      </div>
+      <button type="button" class="btn" onclick="submitForm()">Submit Application</button>
+    </div>
+  </div>
+
+  <footer>
+    <p>For more information, visit your nearest SBI branch or contact customer service at 1800 11 2211.</p>
+  </footer>
+
+  <script>
+    // Function to move to the next step and display the corresponding section
+    function nextStep(step) {
+      // Hide all steps
+      document.querySelectorAll('.form-section').forEach(function(section) {
+        section.classList.remove('active');
+      });
+
+      // Show the current step
+      document.getElementById('step' + step).classList.add('active');
+
+      // If it's the final step, show the summary
+      if (step === 5) {
+        showSummary();
+      }
+    }
+
+    // Function to show the summary of entered data
+    function showSummary() {
+      const summaryList = document.getElementById('summaryList');
+      summaryList.innerHTML = `
+        <li><strong>Full Name:</strong> ${document.getElementById('fullName').value}</li>
+        <li><strong>Date of Birth:</strong> ${document.getElementById('dob').value}</li>
+        <li><strong>Address:</strong> ${document.getElementById('address').value}</li>
+        <li><strong>Contact Number:</strong> ${document.getElementById('contact').value}</li>
+        <li><strong>Email Address:</strong> ${document.getElementById('email').value}</li>
+        <li><strong>Loan Amount:</strong> ₹${document.getElementById('loanAmount').value}</li>
+        <li><strong>Loan Tenure:</strong> ${document.getElementById('loanTenure').value} years</li>
+        <li><strong>Loan Type:</strong> ${document.getElementById('loanType').value}</li>
+        <li><strong>Down Payment:</strong> ₹${document.getElementById('downPayment').value}</li>
+        <li><strong>Employment Status:</strong> ${document.getElementById('employmentStatus').value}</li>
+        <li><strong>Annual Income:</strong> ₹${document.getElementById('income').value}</li>
+        <li><strong>Company Name:</strong> ${document.getElementById('companyName').value}</li>
+        <li><strong>Identity Proof:</strong> ${document.getElementById('identityProof').value}</li>
+        <li><strong>Address Proof:</strong> ${document.getElementById('addressProof').value}</li>
+        <li><strong>Income Proof:</strong> ${document.getElementById('incomeProof').value}</li>
+        <li><strong>Car Details:</strong> ${document.getElementById('carDetails').value}</li>
+        <li><strong>Photograph:</strong> ${document.getElementById('photo').value}</li>
+      `;
+    }
+
+    // Function to submit the form (can be extended to save data or integrate with a backend)
+    function submitForm() {
+      alert('Your car loan application has been submitted successfully!');
+    }
+  </script>
+
+</body>
+</html>

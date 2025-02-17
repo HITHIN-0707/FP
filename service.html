@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SBI Services</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #f0f0f0; /* Light gray background */
+            padding: 20px;
+            text-align: center; /* Center the header content */
+        }
+        nav {
+            background-color: #002855; /* SBI Blue */
+            color: white;
+            padding: 10px;
+            text-align: center; /* Center the navigation links */
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px;
+        }
+        nav a:hover {
+            background-color: #0051a0; /* Darker blue on hover */
+        }
+        .container {
+            padding: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center; /* Center the service boxes */
+        }
+        .service-box {
+            width: 200px; /* Adjust width as needed */
+            margin: 10px;
+            padding: 20px;
+            border: 1px solid #ccc; /* Light gray border */
+            text-align: center; /* Center the content within the box */
+            box-sizing: border-box; /* Include padding and border in the element's total width and height */
+        }
+        .service-box img {
+            max-width: 100%; /* Make sure images don't exceed box width */
+            height: auto;
+        }
+        footer {
+            background-color: #f0f0f0; /* Light gray background */
+            padding: 10px;
+            text-align: center;
+            position: fixed; /* Fixed footer */
+            bottom: 0;
+            width: 100%;
+        }
+        .apply-login {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+        .apply-login a {
+            display: inline-block;
+            margin-left: 10px;
+            padding: 10px 20px;
+            background-color: #002855; /* SBI Blue */
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .breadcrumb {
+            margin-top: 20px;
+        }
+        .breadcrumb a {
+            color: #002855; /* SBI Blue */
+            text-decoration: none;
+        }
+        .breadcrumb span {
+            margin: 0 5px;
+        }
+        .footer-links {
+            margin-top: 10px;
+        }
+        .footer-links a {
+            color: #002855; /* SBI Blue */
+            text-decoration: none;
+            margin: 0 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Welcome to Corporate Internet Banking</h1>
+        <p>About OnlineSBI</p>
+        <div class="apply-login">
+            <a href="#">APPLY NOW</a>
+            <a href="#">LOGIN</a>
+        </div>
+    </header>
+
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">Personal Banking</a>
+        <a href="#">Registration Forms</a>
+        <a href="#">Products</a>
+        <a href="#">Services</a>
+        <a href="#">Contact Us</a>
+        <a href="#">FAQ</a>
+        <a href="#">Sitemap</a>
+        <input type="search" placeholder="Search">
+    </nav>
+
+    <div class="container">
+        <div class="breadcrumb">
+            <a href="#">Home</a> <span>></span> <a href="#">Services</a>
+        </div>
+
+        <h2>Services</h2>
+
+        <div class="service-box">
+            <h3>Account view/Statement</h3>
+            <p>View your account statements online.</p>
+        </div>
+        <div class="service-box">
+            <h3>Fund Transfer</h3>
+            <p>Transfer funds between your accounts and to other banks.</p>
+        </div>
+        <div class="service-box">
+            <h3>Demand Draft / Banker's Cheque request</h3>
+            <p>Request for demand drafts and banker's cheques online.</p>
+        </div>
+        <div class="service-box">
+            <h3>Utility Bill Payment</h3>
+            <p>Pay your utility bills online.</p>
+        </div>
+        <div class="service-box">
+            <h3>Bulk transaction through file upload</h3>
+            <p>Upload files for bulk transactions.</p>
+        </div>
+        <div class="service-box">
+            <h3>Direct and Indirect tax payment</h3>
+            <p>Pay your direct and indirect taxes online.</p>
+        </div>
+        <div class="service-box">
+            <h3>Direct Debit</h3>
+            <p>Set up direct debits for recurring payments.</p>
+        </div>
+        <div class="service-box">
+            <h3>ASBA</h3>
+            <p>Apply for ASBA facility with OnlineSBI.</p>
+        </div>
+        <div class="service-box">
+            <h3>MIS reports</h3>
+            <p>Generate MIS reports online.</p>
+        </div>
+        <div class="service-box">
+            <h3>Host to Host integration</h3>
+            <p>Integrate your systems with SBI's systems.</p>
+        </div>
+        <div class="service-box">
+            <h3>Demat View facility</h3>
+            <p>View your demat account details.</p>
+        </div>
+        <div class="service-box">
+            <h3>Supply Chain Finance</h3>
+            <p>Avail our Electronic Vendor Finance & Electronic Dealer Finance facilities online.</p>
+        </div>
+        <div class="service-box">
+            <h3>Merchant Transactions</h3>
+            <p>Vyapaar/Vistaar users can perform merchant transactions.</p>
+        </div>
+        <div class="service-box">
+            <h3>State Bank Collect</h3>
+            <p>For online collection of funds from your customers.</p>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; State Bank of India. All rights reserved.</p>
+        <div class="footer-links">
+            <a href="#">Privacy Statement</a> | <a href="#">Disclosure</a> | <a href="#">Terms of Use</a>
+        </div>
+    </footer>
+
+</body>
+</html>

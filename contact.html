@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - State Bank of India</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif; /* Use a common font stack */
+            margin: 0;
+            padding: 0;
+            line-height: 1.5; /* Improve readability */
+            color: #333; /* Dark gray text color */
+        }
+
+        /* Header Styles */
+        header {
+            background-color: #fff; /* White background */
+            padding: 20px;
+            display: flex; /* Use flexbox for layout */
+            justify-content: space-between; /* Align items on opposite ends */
+            align-items: center; /* Vertically center items */
+            border-bottom: 1px solid #ccc; /* Add a bottom border */
+        }
+
+        .logo {
+            /* Styles for the SBI logo */
+            max-height: 50px; /* Adjust as needed */
+        }
+
+        .header-links {
+            display: flex; /* Use flexbox for the links */
+            align-items: center; /* Vertically center the links */
+        }
+
+        .header-links a {
+            margin-left: 20px; /* Space between links */
+            text-decoration: none;
+            color: #002855; /* SBI Blue color */
+        }
+
+        .language-dropdown {
+            /* Styles for the language dropdown */
+            border: 1px solid #ccc;
+            padding: 5px;
+            border-radius: 5px;
+        }
+
+        .login-button {
+            background-color: #f26a25; /* Orange login button */
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+
+        /* Navigation Styles */
+        nav {
+            background-color: #002855; /* SBI Blue */
+            color: white;
+            padding: 10px;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex; /* Use flexbox for the menu */
+        }
+
+        nav li {
+            margin-right: 20px; /* Space between menu items */
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+        }
+
+        /* Main Content Styles */
+        main {
+            padding: 20px;
+            display: flex; /* Use flexbox for main layout */
+        }
+
+        .sidebar {
+            width: 250px; /* Fixed width sidebar */
+            margin-right: 20px;
+        }
+
+        .content {
+            flex: 1; /* Content takes up remaining space */
+        }
+
+        .breadcrumb {
+            margin-bottom: 20px;
+        }
+
+        .breadcrumb a {
+            color: #002855; /* SBI Blue */
+            text-decoration: none;
+        }
+
+        .contact-info {
+            margin-top: 20px;
+        }
+
+        .contact-info p {
+            margin-bottom: 10px;
+        }
+
+        .phone-numbers {
+            font-size: 1.2em; /* Larger font size for phone numbers */
+        }
+
+        /* Footer Styles */
+        footer {
+            background-color: #f0f0f0;
+            padding: 20px;
+            text-align: center;
+            border-top: 1px solid #ccc;
+        }
+
+        /* Responsive Design (Example) */
+        @media (max-width: 768px) {
+            main {
+                flex-direction: column; /* Stack sidebar and content vertically */
+            }
+
+            .sidebar {
+                width: 100%;
+                margin-right: 0;
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <img class="logo" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAACoCAMAAABt9SM9AAAAulBMVEX///8pIHUAte8mHHQAAGkAsu42MX3w7/Tb2uQhF3IAsO5gXJIAAGcAse40Lnyf2fYeEnEZCm9/fKWZlrYSAG0gFXL19fjU0+Cvrsbo6O8YCG+04vj1+/7g4OkcD3BOSYhbxfJ1c6CRj7JnZJe8us/Y8PvGxdZuyvNvbJzL6vqFgqmS1/bMy9s5vfDU7vuF0fTm9fxFQIOlo79STYq1tMu54/hZVY8vJ3lPSok/OoFJwfGUkrN4zvQAAF1D7aGQAAAL20lEQVR4nO2daXfiuBKGMZYDNjZbxJaFsAWy0QmkQzrTM///b10MCbalklwlOz13ztH7oU93GjvWg1QqlUrlSsXKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrK6qiX+8vW4/Pz82Pr8v726nt+R39Urw/q9VH/e27/J3R1/zipBkEUeUdFURBUJ4/3pRIbbKcbzk56b8wW12Xe/4/opbUO9pSqkrwoWD/elvI7+sMGYxdt10nk+mPO+HxYU11TGzdzdXbTmM6GT8p7JNo0zyT5dVorrlrVAOCUAAuqjy+0W8p6mofcd0D1eHgzhMdkjbkI+e0O58ydLnIGdtOXr2UkWD8mWlJfvCb3lJuKWpyxHkzqKJ+z7gi4rsZ0V2Xltnm4W+ie4syVr6LAul8jUB1xrY1x1T8Y8JiCxuFcxkWBFcvn/Fz9HMVg3a4DFKmjgvUPI1bdMB9VrF7YFccRFdZenA+/A9bVioLqgGtFnxtH7xfoho65MIwMYO1xbaARXQzWZYQbgGl5wSWR1RLZrb6efV4cluMz2HSZw5pQu9Vn55qQOtcwJDZ07KS7hRksxwl/lwnrtkrvVp+dyyNYLjKr/aSWfnxTWA57KA/WpVm3+uxcLSyrBZ1VTGtQHJbDgFnRDNZzEVZ7Wn/jWF2bsNob6G0JsJxwWQ6sVVSIVbUaTVCwHJJt/5LrJncoAMthkj9vAmtiaq4SeRha3Y5ZI1NTWRFY7bn4QAawSmCFolU3G4TuWeoeRWA5KdtnCqvwGPyktcqDtVGsm/Oa+FQWLP9XUViPxWx7ouhZz+rJrJ3+TfomhWBJIKiw3spitZ8T9c78TtexXFdl+7NjB4LltrPyldPIWHC2iLBeymO1p6ULco1UFsvtcMabTYcxxuWwTa+RuQsAyz3rdqfT7tcf3WnjnXEFL14IVomoYmlgncPLZ5f7vwfHOb022M4lXmF2DQzA8hvS7+r/bHLwtwkmngbr7zImwkQ6I78Bv+x2T1jiLudh2sFoT7P/jYMVfzegcbvYZj5EgnVf5iCMFSjjgX1wFHKgobUZGyePLkTS0bAqC4iWwJ4Eq2RUsVSwnqBxMZbcxCPYh/BzMujMRJJoWJWHsfRRx/0whvVY7iCM5an8hy1gstLrmKxGr0co0gqFAKsCda2shSfAuip7EMZSzYhd4HvmP1WwKpVhHKXnW/HHFFhQ12KmsFbldyy1jW8AXhaDP3rU6L3ndqSfUmAtgZGf7ap4WKW6WIkUXetGhuVudLD282co7zRQYI2AcWgKq2S34UuKrgV4DspWfgkw/xRY/fJgfYvFihWAMXkAljA1oUSBBVl4Q5v1DVPhUd4j9OCvkM1CpCMUgAX1rLEZrG9CFdOCnvwO2K0fi15UubAAm+W/GsEq3XlPFEFu/AyKkkrRuFJhAbOhEHbAwvom8x4LNPE/wZUtmRYFVrctfVbw7LCw8OFRzwtiEbarA+DJr+GoHeAdlAULnAyzMQwkLPQo9KLV5e3L1dXt5SrCAgbHIRwzcdhOkYdQGNad3LHE+RcJCzkXetV09PMSuWsNLhCBQXFsa/hAyCXFw5oB344QocHCWqNaLW2eIjdj18DDq0PwY/aA9iGwsK53UE8Oha8FCQvV6OBNug4Xsgf90qZ6h3Uc3iEtvR7W6DpWfXl+w6CA/7gr3A0H6wemzWAkD3UlaLR+6jZmeuxDE4LAwpqGh5xnfgHvjYRiB8bBaiGMj2KzBpNC4oGZItCjJXI5f8jP6tbDUtnFo+SESRwshJel3GJGRHY8MFFkkLcjPQ53cvJGabD8M+luOFh/ITqWKkcNswL/C7wSmqCEBjFXiveVBYvJPgoOVn5z4c5x0DNiDMNX3miHyUEuZzONK2EOC8g4QsLK7xyB+hQFImoI+fB79d8x6Q4dpva8jGGFUFYpChZmJClZYfqlagzXfFRySIeBKaAFYHVAY4iCld83tBlE+SZeuZHff88fibF4G84vNoTl3oATLQrWbT4sMIL3qfy1kmYQv+Za+WPzWAMai6Y9yw1Fh7RMWLqc2ssisCoz7PkKBgwdcwN/8W44G/6rsCqDHjJdMpTTsQu4Dq4cPPsTwzDf/9fCqlRO2/M5klMhinjwTmiUJokw8Lqkx3z/X5uptVf9BnEsbK/OjXBhIViSX/onXIf8+I7S/T9p2UTh6mR3GArCct8NYGGcUnXfMHdKM1o0wTiKIH5XIiynY5JylN+xNOm0iCgruBsmabnRH2c9PnwmSl8QlmC2SltIR8o2IpaGUKgU0iCb5we3L+dUmBzP2ksR0RLyK8oL0ahW0oh1dH5O/EmjGVdly37BSJstVFi5XxtsXxWdNuO8lRj8g1MeMaFSrZcmaZhjvNLtw29YjOZgZNbfkWHdY3a1QBv/grkSDCtr9LQLNdYmPXQom6xwHDs9qnGwcCk0nuxavqA2w/I9B1HXUw0u/XlDdRbNEgrNprfDyt0KE8Pw2DOcVFYxhm6omhrbySKYBKuyBRbt6eMtSFiYaOdeUaYYwQ9kIQNNlFWnUUO1/5OkzdJgwYlOZFgooxUrdaS3hd3yj+T9RpyWwHmUQwNO45AIawDlOySDGpsYgs51SMHCpobQTdaX+r/AQytJ1jIRVgXoWamaGFhY2BOZJrAmpqz2akBOanIwggprKk8bqYMIWFhvyHFoAMt4FB70ATQgMcpUWOcy+9SRFHSa5PfBwqyi1QITuU6poFRYwMGO1OfRsJDzIR2W4Vx4EnSI8zSDlQEr8eHRsJBnBuiw9IG/KXy2Sd8+c1hAKqsJLKSJp8OCt+4/tWTQqbmMoOxTY1hAkrSffF14WPmBeCNYga4yTdzWzkaf6VdqzwLWUCYGHtm1yLC0HetwgsfnT7rPQBG8kwtPhFUHZgsD16GCtFpUWNp9nfPPEQbscSUCHK0k7kCEBYKnO6WxMLnwRFjasF+SoHXhKhOxIJPVOwXiabDAE/8Gy52DEL4WEZZ2pZMquOCyBpzm14fWOxennD0aLMjBTWfhkmAhIi40WNo6GPPMyVI/nANJt/0PKGiaGDkSrB1wlDWTC08rVZBv40mwPJ11H4rt7LGNWLp1CackJZ2BAOv6DGLldFLZTDRYV+XCijSDEDpX6vLw9XzwRWI03MAbr6ktCzSswZ0i/yQNg1gxJHf7gQJLXdVhL3B87Zt6wRnfNBqNDVcXRUnmL6i8yuZc1MOOq3Yk3WbqmaiFe/IiegRYkS6Z5EGXluX6vrraTuasLli4pyNqrN4tylR4JZeEyknjw8PSJguCewdIpct8FCsJ5QiFHejFxtZaBmhYnm4Xuo9L94MVppyMorCypYMNythpaWFhaVlVXvNzGpTK1I8pCMvNHhwwKZCoo4WE5Wl3v2q4bCxYmWPnBWGFWU/YqPSmhhYOlr5fxeFPY1q5WTSUe5mdNxQ0US58ULAibajhQCsn+0Op9i5zn0KwuFCMy7RcsPLUJQYWpgDuyMElwAsSCyEVgSWHHU0LUauWiQhYyCrn4NnSPFZcyAItAIvLAW3jEucv8AHoXFheFfvuj3NaJfiYFRNDE+awoBhageL54FDMgxXkVCdNq64oW6iS35HCOKaw2mD5/CKvZbhdy3ZeDyta017Bc84IlosDwXozWC6bg3H/Yi/8uKyKuHSwPI/6ToZKTZeHlW0gGHs2geWzD0XQv+irZFpehITl0ZIhvzS6C8E4k4CKn4Hn8cmw3A77pQxhF4UV9670m3cUsLygaoQqVpxzq8+Ad7mvKLtCg+VfMH+mOaVeHFalcr9KKs9AsLwoWBV6n1Nl0Qi58mxgh22UZQtwsOIXYF1wxnZbfcvLgLXX28oLDu9VE2F5XhCtCqXJHNVfTMeMi4Gn+L1qzd+avlD7h+WLOx+N7hbxOrs2cPE/dFh73bZW1SAIkohea/+v6qpVzivoYo0Ws0YvbtxB8V9eHxakOj7/X7p9S3bjf7x9y9sgR/Wn5WKxWA6u/8Mvg7SysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrL67+h/lY79k10CREIAAAAASUVORK5CYII=" alt="SBI Logo">  <div class="header-links">
+            <a href="#">About OnlineSBI</a>
+            <a href="#">Forms</a>
+            <a href="#">Net Banking</a>
+            <a href="#">Branches</a>
+            <div class="language-dropdown">
+                <select>
+                    <option value="en">English</option>
+                    </select>
+            </div>
+            <a class="login-button" href="#">Login</a>
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#">Corporate Banking</a></li>
+            <li><a href="#">How Do I (Help)</a></li>
+            <li><a href="#">Security Tips</a></li>
+            <li><a href="#">Sitemap</a></li>
+            <li><a href="#">Q</a></li>  <li><a href="#">Search</a></li> </ul>
+    </nav>
+
+    <main>
+        <div class="sidebar">
+            </div>
+
+        <div class="content">
+            <div class="breadcrumb">
+                <a href="#">Home</a> <span>></span> Contact Us
+            </div>
+
+            <h1>Contact Us</h1>
+
+            <p>At State Bank of India, we are committed to provide best internet banking services to our customers. Please feel free to share your Internet Banking experience with us over phone.</p>
+
+            <p>SBI now provides your Account Balance and Transaction details over phone round the clock. Information on deposits & loan schemes and services also available.</p>
+
+            <div class="contact-info">
+                <p class="phone-numbers">
+                    <img src="data:image/png;base64,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" alt="Phone Icon"> 1800 1234 & 1800 2100 <br>
+                    (Toll free and accessible from all landlines and mobile phones of India)
+                </p>
+                <p class="phone-numbers">
+                   <img src="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" alt="Phone Icon"> 0091 80 26599990 <br>
+                    (Accessible from all landlines and mobile phones of India and abroad)
+                </p>
+                <p>
+                    <img src="data:image/png;base64,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" alt="Cyber Security Icon"> Ministry of Home Affairs Cyber Crime National Helpline: 1930
+                </p>
+                <p>
+                    <img src="website_icon.png" alt="Website Icon"> National Cyber Crime Reporting Portal: <a href="www.cybercrime.gov.in">www.cybercrime.gov.in</a>
+                </p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        </footer>
+
+</body>
+</html>

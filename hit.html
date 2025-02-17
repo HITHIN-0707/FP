@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SBI Car Loan Application</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: url("https://www.carblogindia.com/wp-content/uploads/2023/06/sbi-car-loan.jpg") no-repeat center center;
+            background-size: cover;
+            position: relative;
+            overflow-x: hidden;
+            overflow-y: auto;
+        }
+
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        .nav-links {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            margin-left: 15px;
+            font-weight: bold;
+            padding: 8px 12px;
+            border-radius: 5px;
+            background: rgba(255, 255, 255, 0.3);
+            transition: background 0.3s, transform 0.2s;
+        }
+
+        .nav-links a:hover {
+            background: rgba(255, 255, 255, 0.6);
+            transform: scale(1.05);
+        }
+
+        .cover-container {
+            background: rgba(255, 255, 255, 0.95);
+            width: 50%;
+            padding: 30px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+            margin-top: 60px;
+            position: relative;
+            z-index: 2;
+        }
+
+        h2, h3 {
+            color: #333;
+        }
+
+        p {
+            color: #555;
+            font-size: 16px;
+        }
+
+        .btn {
+            background: linear-gradient(45deg, #007bff, #0056b3);
+            color: white;
+            border: none;
+            padding: 12px 22px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 8px;
+            margin-top: 15px;
+            transition: transform 0.2s, background 0.3s;
+        }
+
+        .btn:hover {
+            background: linear-gradient(45deg, #0056b3, #003d80);
+            transform: scale(1.05);
+        }
+
+        .query-section {
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 15px;
+            text-align: center;
+            border-top: 3px solid #007bff;
+            margin-top: auto;
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            .cover-container {
+                width: 80%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="nav-links">
+        <a href="about.html">About</a>
+        <a href="service.html">Services</a>
+        <a href="contact.html">Contact Us</a>
+    </div>
+
+    <div class="cover-container" id="coverPage">
+        <h2>Welcome to SBI Car Loan Application</h2>
+        <p>Apply for a car loan easily in just a few steps. Fill out the form to get started.</p>
+        <button class="btn" onclick="startApplication()">Start Application</button>
+
+    </div>
+
+    <div class="query-section" id="querySection">
+        <h3>Have a Query?</h3>
+        <form id="queryForm">
+            <label for="name">Your Name:</label>
+            <input type="text" id="name" name="name" placeholder="Enter your name" required>
+
+            <label for="email">Your Email:</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+            <label for="message">Your Query:</label>
+            <textarea id="message" name="message" placeholder="Type your question here..." required></textarea>
+
+            <button type="submit">Submit Query</button>
+        </form>
+    </div>
+
+    <script>
+        function startApplication() {
+            window.location.href = "application.html";
+        }
+
+        document.getElementById("queryForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            alert("Your query has been submitted successfully! We will get back to you soon.");
+            document.getElementById("queryForm").reset();
+        });
+
+        window.addEventListener("scroll", function() {
+            let querySection = document.getElementById("querySection");
+            if (window.scrollY > 250) {
+                querySection.style.display = "block";
+            } else {
+                querySection.style.display = "none";
+            }
+        });
+    </script>
+
+
+
+</body>
+</html>
